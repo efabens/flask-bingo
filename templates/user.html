@@ -1,0 +1,70 @@
+<html>
+<head>
+    <STYLE TYPE="text/css">
+    html {
+        font-family:sans-serif;
+    }
+    H2 {
+        page-break-after: always
+    }
+    table {
+        border-width: 1px;
+        border-spacing: 0px;
+        border-style: solid;
+        border-color: black;
+        border-collapse: separate;
+    }
+    th {
+        border-width: 1px;
+        padding: 3px;
+        border-style: solid;
+        border-color: black;
+        font-size: 2em;
+        width: 180px;
+        -moz-border-radius: ;
+    }
+    td {
+        border-width: 1px;
+        border: 1px solid black;
+        padding: 3px;
+        border-style: solid;
+        border-color: black;
+        font-size: 1.5em;
+        text-align: center;
+        width: 180px;
+        height: 180px;
+        -moz-border-radius: ;
+    }
+    .orange {
+        color: #e66b3f;
+        font-weight: bold;
+    }
+    .toznygreen {
+        color: #47B7AB;
+        font-weight: bold;
+    }
+</STYLE>
+</head>
+
+{% for users in sheets %}
+<table style="border: 1px solid black;">
+<tr>
+<th class=toznygreen >B</th>
+<th class=toznygreen >I</th>
+<th class=toznygreen >N</th>
+<th class=toznygreen >G</th>
+<th class=toznygreen >O</th>
+</tr>
+{% for user in users %}
+    <tr>
+{% for the in user %}
+
+    <td {% if the is equalto "FREE" %} class=toznygreen {% endif %}>{{ the }}</td>
+
+{% endfor %}
+    </tr>
+{% endfor %}
+</table>
+<h2></h2>
+{% endfor %}
+</html>
